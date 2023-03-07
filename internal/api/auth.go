@@ -2,12 +2,11 @@ package api
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 
-	"go-gin-learning/internal/constant/e"
-	"go-gin-learning/internal/pkg/app"
-	"go-gin-learning/pkg/util"
+	"github.com/rootlulu/go-gin-biu-biu-biu/internal/constant/e"
+	"github.com/rootlulu/go-gin-biu-biu-biu/internal/pkg/app"
+	"github.com/rootlulu/go-gin-biu-biu-biu/pkg/util"
 
 	"github.com/astaxie/beego/validation"
 	"github.com/gin-gonic/gin"

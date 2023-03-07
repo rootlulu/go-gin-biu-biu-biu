@@ -1,9 +1,10 @@
 package jwt
 
 import (
-	"go-gin-learning/internal/constant/e"
-	"go-gin-learning/pkg/util"
 	"net/http"
+
+	"github.com/rootlulu/go-gin-biu-biu-biu/internal/constant/e"
+	"github.com/rootlulu/go-gin-biu-biu-biu/pkg/util"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"

@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
-	"go-gin-learning/internal/api"
-	"go-gin-learning/internal/config"
-	model "go-gin-learning/internal/models"
-	"go-gin-learning/pkg/logging"
-	"go-gin-learning/pkg/util"
 	"net/http"
 	"time"
+
+	"github.com/rootlulu/go-gin-biu-biu-biu/internal/api"
+	"github.com/rootlulu/go-gin-biu-biu-biu/internal/config"
+	model "github.com/rootlulu/go-gin-biu-biu-biu/internal/models"
+	"github.com/rootlulu/go-gin-biu-biu-biu/pkg/logging"
+	"github.com/rootlulu/go-gin-biu-biu-biu/pkg/util"
 
 	"github.com/gin-gonic/gin"
 )

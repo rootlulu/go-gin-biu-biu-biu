@@ -1,8 +1,9 @@
 package config
 
 import (
-	"go-gin-learning/pkg/util"
 	"log"
+
+	"github.com/rootlulu/go-gin-biu-biu-biu/pkg/util"
 
 	"github.com/go-ini/ini"
 )
@@ -14,10 +15,10 @@ type AppCfg struct {
 	LogFormat string
 	LogSuffix string
 
-	RunMode string
-	RunPort       int
-	ReadTimeout   int
-	WriteTimeout  int
+	RunMode        string
+	RunPort        int
+	ReadTimeout    int
+	WriteTimeout   int
 	MaxHeaderBytes int
 }
 

@@ -1,8 +1,8 @@
 package v1
 
 import (
-	"go-gin-learning/internal/middlewares/jwt"
 	"github.com/gin-gonic/gin"
+	"github.com/rootlulu/go-gin-biu-biu-biu/internal/middlewares/jwt"
 )
 
 func InitRouter(r *gin.Engine) {

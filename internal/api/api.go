@@ -1,7 +1,7 @@
 package api
 
 import (
-	v1 "go-gin-learning/internal/api/v1"
+	v1 "github.com/rootlulu/go-gin-biu-biu-biu/internal/api/v1"
 
 	"github.com/gin-gonic/gin"
 )
