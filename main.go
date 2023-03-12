@@ -15,10 +15,11 @@ import (
 )
 
 func init() {
-	logging.Init()
 	config.Init()
-	model.Init()
 	util.Init()
+	logging.Init()
+	model.Init()
+
 }
 
 func main() {

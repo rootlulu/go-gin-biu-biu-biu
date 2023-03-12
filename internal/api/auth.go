@@ -1,10 +1,13 @@
 package api
 
 import (
+	"database/sql"
 	"net/http"
 
+	"github.com/rootlulu/go-gin-biu-biu-biu/internal/config"
 	"github.com/rootlulu/go-gin-biu-biu-biu/internal/constant/e"
 	"github.com/rootlulu/go-gin-biu-biu-biu/internal/pkg/app"
+	"github.com/rootlulu/go-gin-biu-biu-biu/pkg/logging"
 	"github.com/rootlulu/go-gin-biu-biu-biu/pkg/util"
 
 	"github.com/gin-gonic/gin"
@@ -40,5 +43,25 @@ func Auth(c *gin.Context) {
 
 // todo
 func check(auth interface{}) bool {
+	// todo
+	db, err := sql.Open(config.DB.Type, config.DB.Path+config.DB.File)
+	if err != nil {
+		logging.Error("Cant open the db file.", err)
+	}
+	rows, err := db.Query("SELECT * from lulu;")
+	if err != nil {
+		logging.Error(err)
+	}
+	for rows.Next() {
+		var id int
+		var username string
+		var password string
+
+		err := rows.Scan(&id, &username, &password)
+		if err != nil {
+			logging.Error(err)
+		}
+		logging.Info(111111111111111, id, username, password)
+	}
 	return true
 }

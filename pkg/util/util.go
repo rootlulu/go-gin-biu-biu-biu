@@ -4,7 +4,9 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 
-	"github.com/rootlulu/go-gin-biu-biu-biu/pkg/logging"
+	// "github.com/rootlulu/go-gin-biu-biu-biu/pkg/logging"
+	// todo, the cycle importing.
+	"log"
 
 	"github.com/go-ini/ini"
 )
@@ -14,7 +16,7 @@ func Init() {}
 func IniToStruct(cfg *ini.File, section string, v interface{}) {
 	err := cfg.Section(section).MapTo(v)
 	if err != nil {
-		logging.Fatal("Parsing the config failed: %v", err)
+		log.Fatal("Parsing the config failed: %v", err)
 	}
 }
 
