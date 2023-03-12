@@ -1,8 +1,7 @@
 package config
 
 import (
-	"log"
-
+	"github.com/rootlulu/go-gin-biu-biu-biu/pkg/logging"
 	"github.com/rootlulu/go-gin-biu-biu-biu/pkg/util"
 
 	"github.com/go-ini/ini"
@@ -40,10 +39,11 @@ var App = &AppCfg{}
 var DB = &DBCfg{}
 var Cache = &CacheCfg{}
 
+// Init ...
 func Init() {
 	cfg, err := ini.Load("config.ini")
 	if err != nil {
-		log.Fatalf("Parsing the config failed, %v", err)
+		logging.Fatal("Parsing the config failed, %v", err)
 	}
 	util.IniToStruct(cfg, "app", App)
 	util.IniToStruct(cfg, "db", DB)
