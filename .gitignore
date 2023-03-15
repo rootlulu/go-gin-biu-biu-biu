@@ -21,7 +21,7 @@ vendor/
 go.work
 
 # logs
-logs/
+logs/**/*log*
 
 # db
-db/
+db/**/*db*
