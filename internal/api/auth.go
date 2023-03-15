@@ -61,7 +61,6 @@ func check(auth interface{}) bool {
 		if err != nil {
 			logging.Error(err)
 		}
-		logging.Info(111111111111111, id, username, password)
 	}
 	return true
 }

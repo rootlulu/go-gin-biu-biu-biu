@@ -46,7 +46,7 @@ var Cache = &CacheCfg{}
 func Init() {
 	cfg, err := ini.Load("config.ini")
 	if err != nil {
-		log.Fatal("Parsing the config failed, %v", err)
+		log.Fatalf("Parsing the config failed, %v", err)
 	}
 	util.IniToStruct(cfg, "app", App)
 	util.IniToStruct(cfg, "db", DB)

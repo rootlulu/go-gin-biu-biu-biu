@@ -21,7 +21,7 @@ func Init() {
 	defer db.Close()
 
 	initS := `
-	CREATE TABLE lulu(id INTEGER PRIMARY KEY, name TEXT, password STRING);
+	CREATE TABLE IF NOT EXISTSlulu (id INTEGER PRIMARY KEY, name TEXT, password STRING);
 	INSERT INTO lulu(name, password) VALUES('ysm', 'Judi');
 	INSERT INTO lulu(name, password) VALUES('lulu', 'Judi wife');
 	`
@@ -30,5 +30,9 @@ func Init() {
 		logging.Fatal(err)
 	}
 	logging.Info("Table lulu created!")
+}
 
+type User struct {
+	Username string
+	Password string
 }

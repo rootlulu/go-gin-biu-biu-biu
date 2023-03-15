@@ -16,7 +16,7 @@ func Init() {}
 func IniToStruct(cfg *ini.File, section string, v interface{}) {
 	err := cfg.Section(section).MapTo(v)
 	if err != nil {
-		log.Fatal("Parsing the config failed: %v", err)
+		log.Fatalf("Parsing the config failed: %v", err)
 	}
 }
 

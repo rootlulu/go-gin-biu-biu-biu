@@ -19,7 +19,6 @@ func init() {
 	util.Init()
 	logging.Init()
 	model.Init()
-
 }
 
 func main() {
