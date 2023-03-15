@@ -13,22 +13,18 @@ import (
 
 var loggerFile, loggerConsole *log.Logger
 
-// Init ...
-func Init() {
-	// todo, can configure the log output.
-	lf, _ := logFile("test")
-	loggerFile = log.New(lf, "", log.Llongfile|log.LstdFlags)
-	loggerConsole = log.New(os.Stderr, "", log.Llongfile|log.LstdFlags)
-}
-
-func logFile(fileName string) (*os.File, error) {
-	// todo, read the setting and decide the path.
-	wd, _ := os.Getwd()
-	f, err := os.OpenFile(filepath.Join(wd, config.App.LogPath, time.Now().Format(config.App.LogFormat)+config.App.LogSuffix), os.O_RDWR|os.O_APPEND|os.O_CREATE, 0644)
+func LogFile(filePath string) error {
+	if filePath == "" {
+		filePath, _ = os.Getwd()
+	}
+	f, err := os.OpenFile(filepath.Join(config.App.LogPath, time.Now().Format(config.App.LogFormat)+config.App.LogSuffix), os.O_RDWR|os.O_APPEND|os.O_CREATE, 0644)
 	if err != nil {
 		log.Fatal("The logger file can't opened.", err)
+		return err
 	}
-	return f, nil
+	loggerFile = log.New(f, "", log.Llongfile|log.LstdFlags)
+	loggerConsole = log.New(os.Stderr, "", log.Llongfile|log.LstdFlags)
+	return nil
 }
 
 // Debug ...

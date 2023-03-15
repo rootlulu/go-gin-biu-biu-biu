@@ -8,16 +8,16 @@ import (
 	"github.com/rootlulu/go-gin-biu-biu-biu/internal/api"
 	"github.com/rootlulu/go-gin-biu-biu-biu/internal/config"
 	model "github.com/rootlulu/go-gin-biu-biu-biu/internal/models"
-	"github.com/rootlulu/go-gin-biu-biu-biu/pkg/logging"
+	"github.com/rootlulu/go-gin-biu-biu-biu/internal/pkg/log"
 	"github.com/rootlulu/go-gin-biu-biu-biu/pkg/util"
 
 	"github.com/gin-gonic/gin"
 )
 
 func init() {
-	config.Init()
 	util.Init()
-	logging.Init()
+	config.Init()
+	log.Init()
 	model.Init()
 }
 

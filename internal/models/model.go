@@ -2,7 +2,6 @@ package model
 
 import (
 	"database/sql"
-	"log"
 
 	"github.com/rootlulu/go-gin-biu-biu-biu/internal/config"
 	"github.com/rootlulu/go-gin-biu-biu-biu/pkg/logging"
@@ -12,8 +11,6 @@ import (
 
 // Init ...
 func Init() {
-	log.Println("Model initing...  log")
-	logging.Info("Model initing... logging")
 	db, err := sql.Open(config.DB.Type, config.DB.Path+config.DB.File)
 	if err != nil {
 		logging.Fatal(err)
