@@ -56,6 +56,7 @@ func QueryRow(query string) *sql.Row {
 	return row[0].Interface().(*sql.Row)
 }
 
+
 func Exec(query string) (sql.Result, error) {
 	res := SqliteContext("Exec", query)
 	resV := res[0]
